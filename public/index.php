@@ -5,9 +5,9 @@
   $database = new Database();
   try{
       $connection = $database->connect();
-    if($connection){
-      echo 'Connected to the database';
-    }
+      if($connection){
+        echo 'Connected to the database';
+      }
   }
   catch(Exception $e){
     echo 'Caught exception: ', $e->getMessage(), "\n";
