@@ -16,28 +16,24 @@
     </div>
 
     <div class="row mt-5">
-        <!-- Product cards will go here -->
         <?php
-          include __DIR__ . '/../../config/db.php';
-          $db = Database::connect();
-          $products_query = "SELECT * FROM products LIMIT 6";
-          $result = $db->query($products_query);
-          if($result->num_rows > 0){
-              while($row = $result->fetch_assoc()){
-                  echo '<div class="col-md-4 mb-4">';
-                  echo '<div class="card">';
-                  echo '<img src="' . $row['image_url'] . '" class="card-img-top" alt="' . $row['name'] . '">';
-                  echo '<div class="card-body">';
-                  echo '<h5 class="card-title">' . $row['name'] . '</h5>';
-                  echo '<p class="card-text">$' . $row['price'] . '</p>';
-                  echo '<a href="#" class="btn btn-primary">Add to Cart</a>';
-                  echo '</div>';
-                  echo '</div>';
-                  echo '</div>';
-              }
-          } else {
-              echo '<p>No products found.</p>';
-          }
+            include __DIR__ . '/../../config/db.php';
+            include __DIR__ . '/../models/Product.php';
+            $connection = Database::connect();
+            $productModel = new Product($connection);
+            $products = $productModel->getAllProducts(6);
+            foreach ($products as $product) {
+                echo '<div class="col-md-4 mb-4">';
+                echo '<div class="card">';
+                echo '<img src="/public/images/' . $product['image_url'] . '" class="card-img-top" alt="' . $product['name'] . '">';
+                echo '<div class="card-body">';
+                echo '<h5 class="card-title">' . $product['name'] . '</h5>';
+                echo '<p class="card-text">$' . number_format($product['price'], 2) . '</p>';
+                echo '<a href="/product.php?id=' . $product['id'] . '" class="btn btn-primary">View Product</a>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
         ?>
     </div>
 </div>
