@@ -11,9 +11,7 @@
   <body>
     <?php
       include __DIR__ . '/../config/db.php';
-      include __DIR__ . '/../src/layout/header.php';
       include __DIR__ . '/../src/pages/home.php';
-      include __DIR__ . '/../src/layout/footer.php';
     ?>
     <script src="/public/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/public/assets/js/bootstrap.min.js"></script>
