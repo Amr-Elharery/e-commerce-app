@@ -1,0 +1,20 @@
+{
+  "name": "e-commerce-app",
+  "version": "1.0.0",
+  "description": "Simple E-Commerce app with php & mysql",
+  "main": "index.js",
+  "scripts": {
+    "start": "php -S localhost:8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amr-Elharery/e-commerce-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amr-Elharery/e-commerce-app/issues"
+  },
+  "homepage": "https://github.com/Amr-Elharery/e-commerce-app#readme"
+}
