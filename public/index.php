@@ -10,7 +10,24 @@
   </head>
   <body>
     <?php
-      include __DIR__ . '/../src/pages/home.php';
+
+use Soap\Url;
+
+      $url = $_SERVER['REQUEST_URI'];
+      if (strpos($url, '?') !== false) {
+          $url = substr($url, 0, strpos($url, '?'));
+      }
+      switch ($url) {
+        case '/public':
+            include __DIR__ . '/../src/pages/home.php';
+            break;
+        case '/public/products':
+            include __DIR__ . '/../src/pages/products/products.php';
+            break;
+        default:
+            include __DIR__ . '/../src/pages/404.php';
+            break;
+      }
     ?>
     <script src="/public/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/public/assets/js/bootstrap.min.js"></script>
