@@ -23,7 +23,7 @@
             $productModel = new Product($connection);
             $products = $productModel->getAllProducts(6);
             foreach ($products as $product) {
-                echo '<div class="col-md-4 mb-4">';
+                echo '<div class="col-md-3 mb-4">';
                 echo '<div class="card">';
                 echo '<img src="/public/images/' . $product['image_url'] . '" class="card-img-top" alt="' . $product['name'] . '">';
                 echo '<div class="card-body">';
