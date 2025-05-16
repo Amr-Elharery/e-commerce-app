@@ -11,8 +11,6 @@
   <body>
     <?php
 
-use Soap\Url;
-
       $url = $_SERVER['REQUEST_URI'];
       if (strpos($url, '?') !== false) {
           $url = substr($url, 0, strpos($url, '?'));
