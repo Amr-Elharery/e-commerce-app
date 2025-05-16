@@ -28,6 +28,7 @@
                 echo '<img src="/public/images/' . $product['image_url'] . '" class="card-img-top" alt="' . $product['name'] . '">';
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . $product['name'] . '</h5>';
+                echo '<p class="card-text">'. $product['description'] .'</p>';
                 echo '<p class="card-text">$' . number_format($product['price'], 2) . '</p>';
                 echo '<a href="/product.php?id=' . $product['id'] . '" class="btn btn-primary">View Product</a>';
                 echo '</div>';
