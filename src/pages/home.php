@@ -23,9 +23,11 @@
             $productModel = new Product($connection);
             $products = $productModel->getAllProducts(6);
             foreach ($products as $product) {
+                $dummy_img = 'https://placehold.co/100?text=' . $product['name']; // TODO: replace with actual product img
                 echo '<div class="col-md-3 mb-4">';
                 echo '<div class="card">';
-                echo '<img src="/public/images/' . $product['image_url'] . '" class="card-img-top" alt="' . $product['name'] . '">';
+                // echo '<img src="/public/images/' . $product['image_url'] . '" class="card-img-top" alt="' . $product['name'] . '">';
+                echo '<img src="'.$dummy_img.'" class="card-img-top" alt="' . $product['name'] . '">';
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . $product['name'] . '</h5>';
                 echo '<p class="card-text">'. $product['description'] .'</p>';
